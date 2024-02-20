@@ -1,43 +1,3 @@
---[[
-
-=====================================================================
-==================== READ THIS BEFORE CONTINUING ====================
-=====================================================================
-
-Kickstart.nvim is *not* a distribution.
-
-Kickstart.nvim is a template for your own configuration.
-  The goal is that you can read every line of code, top-to-bottom, understand
-  what your configuration is doing, and modify it to suit your needs.
-
-  Once you've done that, you should start exploring, configuring and tinkering to
-  explore Neovim!
-
-  If you don't know anything about Lua, I recommend taking some time to read through
-  a guide. One possible example:
-  - https://learnxinyminutes.com/docs/lua/
-
-
-  And then you can explore or search through `:help lua-guide`
-  - https://neovim.io/doc/user/lua-guide.html
-
-
-Kickstart Guide:
-
-I have left several `:help X` comments throughout the init.lua
-You should run that command and read that help section for more information.
-
-In addition, I have some `NOTE:` items throughout the file.
-These are for you, the reader to help understand what is happening. Feel free to delete
-them once you know what you're doing, but they should serve as a guide for when you
-are first encountering a few different constructs in your nvim config.
-
-I hope you enjoy your Neovim journey,
-- TJ
-
-P.S. You can delete this when you're done too. It's your config now :)
---]]
-
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
@@ -60,12 +20,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- [[ Configure plugins ]]
--- NOTE: Here is where you install your plugins.
---  You can configure plugins using the `config` key.
---
---  You can also configure plugins after the setup call,
---    as they will be available in your neovim runtime.
+--[[
+ _____ _         _         
+|  _  | |_ _ ___|_|___ ___ 
+|   __| | | | . | |   |_ -|
+|__|  |_|___|_  |_|_|_|___|
+            |___|          
+]]--
+
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
@@ -270,12 +232,6 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
-  -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
-  --       These are some example plugins that I've included in the kickstart repository.
-  --       Uncomment any of the lines below to enable them.
-  -- require 'kickstart.plugins.autoformat',
-  -- require 'kickstart.plugins.debug',
-
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
   --    up-to-date with whatever is in the kickstart repo.
@@ -285,9 +241,14 @@ require('lazy').setup({
   -- { import = 'custom.plugins' },
 }, {})
 
--- [[ Setting options ]]
--- See `:help vim.o`
--- NOTE: You can change these options as you wish!
+
+--[[                             
+ _____     _   _             
+|     |___| |_|_|___ ___ ___ 
+|  |  | . |  _| | . |   |_ -|
+|_____|  _|_| |_|___|_|_|___|
+      |_|                    
+]]--
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -299,8 +260,6 @@ vim.wo.number = true
 vim.o.mouse = 'a'
 
 -- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
@@ -326,7 +285,13 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
--- [[ Basic Keymaps ]]
+--[[
+ _____                           
+|  |  |___ _ _ _____ ___ ___ ___ 
+|    -| -_| | |     | .'| . |_ -|
+|__|__|___|_  |_|_|_|__,|  _|___|
+          |___|         |_|      
+]]--
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
